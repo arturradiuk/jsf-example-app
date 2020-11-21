@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>New Person</title>
+</h:head>
+<h:body>
+    New Person
+    <h:form>
+
+        *Login: <h:inputText value="#{personController.newPerson.login}" required="true"></h:inputText> <br/>
+        <!--        Pssword: <h:inputSecret value="#{personController.newPerson.password}"></h:inputSecret> <br/>-->
+        Pssword: <h:inputText value="#{personController.newPerson.password}"></h:inputText> <br/>
+        PhoneNumber: <h:inputText value="#{personController.newPerson.phoneNumber}"></h:inputText> <br/>
+        <h:commandButton value="OK" action="#{personController.processNewPerson()}"></h:commandButton>
+        <h:commandButton value="Cancel" action="main"
+                         immediate="true"></h:commandButton> <!-- to ignore checking for required fields  -->
+    </h:form>
+</h:body>
+
+</html>
