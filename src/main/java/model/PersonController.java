@@ -2,6 +2,7 @@ package model;
 
 import lombok.Data;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -19,6 +20,8 @@ public class PersonController implements Serializable {
 
     @Inject
     private PersonStore personStore;
+
+    private List<Person> currentPersons;
 
     private Person newPerson = new Person();
 
@@ -38,11 +41,18 @@ public class PersonController implements Serializable {
     }
 
     public List<Person> getAllPersons() {
-        return personStore.findAll();
+//        return personStore.findAll(); // to avoid "przeplot"
+        return this.currentPersons;
     }
 
     public void deletePerson(Person p) {
         personStore.deletePerson(p);
+        initCurrentPersons();
+    }
+
+    @PostConstruct // after injection
+    public void initCurrentPersons(){
+        currentPersons = personStore.findAll();
     }
 
 
