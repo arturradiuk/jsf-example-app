@@ -12,11 +12,11 @@
     New Person
     <h:form>
 
-        *Login: <h:inputText value="#{personController.newPerson.login}" required="true"></h:inputText> <br/>
+        *Login: <h:inputText value="#{newPersonController.newPerson.login}" required="true"></h:inputText> <br/>
         <!--        Pssword: <h:inputSecret value="#{personController.newPerson.password}"></h:inputSecret> <br/>-->
-        Pssword: <h:inputText value="#{personController.newPerson.password}"></h:inputText> <br/>
-        PhoneNumber: <h:inputText value="#{personController.newPerson.phoneNumber}"></h:inputText> <br/>
-        <h:commandButton value="OK" action="#{personController.processNewPerson()}"></h:commandButton>
+        Pssword: <h:inputText value="#{newPersonController.newPerson.password}"></h:inputText> <br/>
+        PhoneNumber: <h:inputText value="#{newPersonController.newPerson.phoneNumber}"></h:inputText> <br/>
+        <h:commandButton value="OK" action="#{newPersonController.processNewPerson()}"></h:commandButton>
         <h:commandButton value="Cancel" action="main"
                          immediate="true"></h:commandButton> <!-- to ignore checking for required fields  -->
     </h:form>

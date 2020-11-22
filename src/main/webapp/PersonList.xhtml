@@ -11,7 +11,7 @@
 <h:body>
     Persons:
     <h:form>
-        <h:dataTable value="#{personController.allPersons}" var="personIterator">  <!-- przeplot -->
+        <h:dataTable value="#{personListController.allPersons}" var="personIterator">  <!-- przeplot -->
             <h:column>
                 <f:facet name="header">Login</f:facet>
                 ${personIterator.login}
@@ -26,12 +26,12 @@
             </h:column>
             <h:column>
                 <f:facet name="header">Actions</f:facet>
-                <h:commandButton value="Delete" action="#{personController.deletePerson(personIterator)}"></h:commandButton>
+                <h:commandButton value="Delete" action="#{personListController.deletePerson(personIterator)}"></h:commandButton>
             </h:column>
         </h:dataTable>
 
         <h:commandButton value="Main" action="main"></h:commandButton>
-        <h:commandButton value="Refresh" action="#{personController.initCurrentPersons}"></h:commandButton>
+        <h:commandButton value="Refresh" action="#{personListController.initCurrentPersons}"></h:commandButton>
 
     </h:form>
 </h:body>

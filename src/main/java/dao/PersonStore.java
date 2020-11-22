@@ -1,4 +1,6 @@
-package model;
+package dao;
+
+import model.Person;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
