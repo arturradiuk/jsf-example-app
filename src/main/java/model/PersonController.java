@@ -12,6 +12,10 @@ import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
 
+
+// todo add automatic refresh every 5 sec
+// todo connect the refreshing of the webpage in browser with refreshing data and not resending the previous request
+
 @Data
 @Named
 //@RequestScoped - because after "post redirect get" the object value is null)
