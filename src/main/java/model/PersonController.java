@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -19,7 +20,9 @@ import java.util.List;
 @Data
 @Named
 //@RequestScoped - because after "post redirect get" the object value is null)
-@SessionScoped
+//@SessionScoped
+@ViewScoped  // open person list delete person open index.xhtml and open person list you will see the changes or
+                        // make deletePerson return PersonList
 public class PersonController implements Serializable {
 
     @Inject
@@ -49,9 +52,10 @@ public class PersonController implements Serializable {
         return this.currentPersons;
     }
 
-    public void deletePerson(Person p) {
+    public String deletePerson(Person p) {
         personStore.deletePerson(p);
-        initCurrentPersons();
+//        initCurrentPersons();
+        return "PersonList"; // force the refreshing of the view
     }
 
     @PostConstruct // after injection
