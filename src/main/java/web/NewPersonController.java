@@ -42,12 +42,12 @@ public class NewPersonController implements Serializable {
             throw new IllegalArgumentException("Proba zatwirdzenia Person bez danych.");
         }
         personStore.addPerson(newPerson);
-        conversation.end();
+        conversation.end(); // and here we finish it
         return "main";
     }
 
     public String processNewPerson() {
-        conversation.begin();
+        conversation.begin(); // here we start our scope
         return "NewPersonConfirm";
     }
 
