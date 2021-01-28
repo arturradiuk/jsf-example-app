@@ -14,6 +14,8 @@
     <ul>
         <li><h:link outcome="NewPerson">New Person</h:link></li>
         <li><h:link outcome="PersonList">List Persons</h:link></li>
+        <li onclick="myFunction()" id="element_to_click">click_here</li>
+
     </ul>
 
     <h1>JSF 2 internationalization example</h1>
@@ -36,6 +38,10 @@
         </h:panelGrid>
 
     </h:form>
+
+
+
+    <h:outputScript library="js" name="common.js" target="body" />
 
 </h:body>
 </html>
